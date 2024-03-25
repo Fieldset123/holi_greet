@@ -1,0 +1,100 @@
+body {
+        text-align: center;
+        background-color: black;
+        /* background-image: url("./background.jpeg"); */
+  }
+  .card__container {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1400px;
+    transition: all 0.2s ease;
+  }
+  @media (min-width: 768px) {
+    .open .card__container {
+      transform: translate(0%, -50%);
+    }
+  }
+  .card {
+    max-width: 400px;
+    max-height: 600px;
+    width: 80vw;
+    height: 120vw;
+    transform-style: preserve-3d;
+    transform: rotateX(45deg);
+    transition: all 1s ease;
+
+  }
+  .open .card {
+    transform: rotateX(5deg);
+  }
+  .card__panel {
+    border: 1px solid rgb(125, 210, 225);
+    border-radius: 2cqmin;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height:600px;
+    display: grid;
+    place-items: center;
+    transition: all 1s ease;
+    backface-visibility: visible;
+    transform-origin: left;
+    transform-style: preserve-3D;
+    transform: rotate3d(0, 1, 0, 0deg);
+    object-fit:contain;
+    /* overflow: hidden; */
+  }
+  .card__panel--front {
+    backface-visibility: hidden;
+    /* background-color:#873ac5; */
+    z-index: 1;
+    
+    
+  }
+  .open .card__panel--front {
+    transform: rotate3d(0, 1, 0, -180deg);
+  }
+  .card__panel--inside-left {
+    background-color: rgb(232, 189, 88);
+    z-index: 0;
+  }
+  .open .card__panel--inside-left {
+    transform: rotate3d(0, 1, 0, -170deg);
+  }
+  .card__panel--inside-right {
+    border-left: none;
+    background-color:goldenrod;
+    z-index: -1;
+    color:black;
+    font-family:sans-serif;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 800;
+    /* font-style: italic; */
+    /* text-align: end; */
+  }
+
+  .pic{
+    width:400px;
+    height:600px;
+    border-radius: 20px;
+  }
+
+  .rangoli{
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    object-fit:contain;
+  }
+
+  
+.left{
+    width:400px;
+    height:600px;
+    border-radius: 20px;
+    object-fit:cover;
+  }
